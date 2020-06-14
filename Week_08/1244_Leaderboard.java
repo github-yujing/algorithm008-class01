@@ -46,4 +46,27 @@ class Leaderboard {
         }
         array[index-1] = orign;
     }
-    public int 
+    public int search(int playerId){
+        for(int i = 0; i < index;i++){
+            if(array[i][0] == playerId) return i;
+        }
+        return -1;
+    }
+}
+
+    public void reset(int playerId) {
+        int ret = search(playerId);
+        int[] orign = array[ret];
+        orign[1] = 0;
+        for(int i = ret+1;i<index;i++){
+            array[i-1] = array[i];
+        }
+        array[index-1] = orign;
+    }
+    public int search(int playerId){
+        for(int i = 0; i < index;i++){
+            if(array[i][0] == playerId) return i;
+        }
+        return -1;
+    }
+}
